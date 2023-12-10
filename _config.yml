@@ -1,0 +1,5 @@
+theme: jekyll-theme-slate
+title: Jo's Blog
+description: Something insignificant
+gems:
+  - jekyll-sitemap
