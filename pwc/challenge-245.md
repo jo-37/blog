@@ -1,3 +1,7 @@
+---
+layout: default
+title: Challenge 245
+---
 # The Most Popular of Three
 
 ## Task 1: Sort Language
