@@ -1,3 +1,7 @@
+---
+layout: default
+title: Challenge 246
+---
 # Recurring Lotteries
 
 ## Task 1: 6 out of 49
