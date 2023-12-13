@@ -1,3 +1,7 @@
+---
+layout: default
+title: Challenge 244
+---
 # Smaller Heroes
 
 ## Task 1: Count Smaller

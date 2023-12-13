@@ -1,3 +1,7 @@
+---
+layout: default
+title: Challenge 085
+---
 # Interwoven numbers
 
 ## The task

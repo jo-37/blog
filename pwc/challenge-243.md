@@ -1,3 +1,7 @@
+---
+layout: default
+title: Challenge 243
+---
 # Count the Pairs on the Floor
 
 ## Task 1: Reverse Pairs

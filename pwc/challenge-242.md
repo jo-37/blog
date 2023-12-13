@@ -1,3 +1,7 @@
+---
+layout: default
+title: Challenge 242
+---
 # Missing Reversed Inversions
 ## Task 1: Missing Members
 > You are given two arrays of integers.
