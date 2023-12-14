@@ -198,7 +198,7 @@ use PDL;
 use PDL::Char;
 
 sub most_frequent_pair {
-	my $s = PDL::Char->new(shift);
+    my $s = PDL::Char->new(shift);
     my ($count, $pairs) = rlevec($s->lags(0, 1, $s->dim(0) - 1)->qsortvec);
     $pairs->atstr($count->long->maximum_ind);
 }
