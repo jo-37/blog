@@ -148,49 +148,49 @@ Here [PDL::Char](https://metacpan.org/pod/PDL::Char) comes handy.
 
 We may solve example 1 step by step in the [PDL shell](https://metacpan.org/dist/PDL/view/Perldl2/pdl2).
 
-First load `PDL::Char` and construct a `PDL::Char` object:
+First load `PDL::Char` and toggle 'print-by-default':
 ```
 pdl> use PDL::Char
 
+pdl> do_print
+1
+```
+Construct a `PDL::Char` object:
+```
 pdl> $s = PDL::Char->new('abcdbca')
-
-pdl> p $s
 'abcdbca' 
 ```
 Then use [lags](https://metacpan.org/pod/PDL::Slices#lags) to build the character pairs:
 ```
 pdl> $p = $s->lags(0, 1, $s->dim(0) - 1)
-
-pdl> p $p
 [ 'ca' 'bc' 'db' 'cd' 'bc' 'ab' ] 
 ```
 Perform a [vector sort](https://metacpan.org/pod/PDL::Ufunc#qsortvec):
 ```
 pdl> $sv = $p->qsortvec
-
-pdl> p $sv
 [ 'ab' 'bc' 'bc' 'ca' 'cd' 'db' ] 
 ```
 [Runlength-encode](https://metacpan.org/pod/PDL::Slices#rlevec) the sorted pairs.
-As the `$count` ndarray inherits the class `PDL::Char` from `$sv`, it needs to be converted to a numerical type.
 ```
 pdl> ($count, $pairs) = $sv->rlevec
-
-pdl> p $count->long, $pairs
-[1 2 1 1 1 0] [ 'ab' 'bc' 'ca' 'cd' 'db' '' ] 
+$PDL_Char1 = '' ;
+$PDL_Char2 = [ 'ab' 'bc' 'ca' 'cd' 'db' '' ] 
+;
+```
+As the `$count` ndarray inherits the class `PDL::Char` from `$sv`, it needs to be converted to a numerical type:
+```
+pdl> $count->long
+[1 2 1 1 1 0]
 ```
 [Find the index](https://metacpan.org/pod/PDL::Ufunc#maximum_ind) of the most frequent pair.
-
 ```
 pdl> $maxind = $count->long->maximum_ind
-
-pdl> p $maxind
-1 
+1
 ```
 [Pick](https://metacpan.org/pod/PDL::Char#atstr) the result:
 ```
-pdl> p $pairs->atstr($maxind)
-bc 
+pdl> $pairs->atstr($maxind)
+bc
 ```
 Everything put together in a sub:
 ```
