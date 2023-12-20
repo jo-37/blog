@@ -2,7 +2,7 @@
 layout: default
 title: Challenge 248
 ---
-# Title
+# Distances and Sums
 
 ## Task 1: Shortest Distance
 **Submitted by: Mohammad S Anwar**
