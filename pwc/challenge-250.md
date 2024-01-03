@@ -45,7 +45,7 @@ Whenever we loop over an array and need both the index and the value, [each](htt
 Here we return the first index that equals the value modulo a given base or `-1` if none is found.
 ```perl
 sub smallest_index {
-	my $base = shift;
+    my $base = shift;
     while (my ($i, $n) = each @_) {
         return $i if $n == $i % $base;
     }
@@ -91,7 +91,7 @@ If it does, we use its numeric value and otherwise the string's length.
 use List::Util 'max';
 
 sub max_val {
-	max map /^\d+$/ ? 0 + $_ : length, @_;
+    max map /^\d+$/ ? 0 + $_ : length, @_;
 }
 ```
 See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-250/jo-37/perl/ch-2.pl).
