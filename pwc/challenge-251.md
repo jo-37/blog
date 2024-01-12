@@ -114,7 +114,7 @@ Output: 7
 ```
 ---
 ### Preliminary Considerations
-Let's ignore the precondition for the matrix elements to be distinct for a moment.
+We'll ignore the precondition for the matrix elements to be distinct for a moment.
 
 Let `rmin[i]` be the minimum over row `i` and `cmax[k]` the maximum over column `k`.
 For `m[i,k]` we can see that  
@@ -130,7 +130,7 @@ Otherwise we have
 `max rmin[i] = min cmax[k]`.  
 Let `rmin` have the maximum value `mm` in row `i`
 and `cmax` the minimum value `mm` in column `k`.  
-Looking at `m[i,k]` again in the above inequalities lead to:  
+Looking at `m[i,k]` again, the above inequalities lead to:  
 `m[i,k] >= mm` and  
 `m[i,k] <= mm`, leading to  
 `m[i,k] = mm`.  
@@ -138,16 +138,17 @@ Therefore the element `m[i,k]` is a lucky number.
 
 In the preceding considerations we didn't make use of the *uniqueness* precondition.
 We may drop the precondition, but the question
-remains, what it is needed for at all.
+remains: What it is needed for at all?
 
 I can only speculate about this.
 The described property of being "lucky" is a property of a matrix *element*.
 However, we are asked to find a lucky number, i.e. a matrix *value*.
-With non-unique elements we are able to construct a matrix that contains a "lucky" element but has the same value at another position that is not "lucky".
-In this case we cannot state that this value is a *lucky number*.
-See the full solution for an example.
+With non-unique elements we are able to construct a matrix that contains a "lucky" element but has the same value at other positions that are not "lucky".
+In this case we cannot really state that this *value* is a *lucky number*.
+See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-251/jo-37/perl/ch-2.pl) for an example.
 
-With unique values there can be only one *lucky element* which then corresponds unambiguously to one *lucky number*.
+With unique values there can be only one *lucky element*.
+As each value corresponds unambiguously to one element, there is a unique *lucky number* in this case (if one exists at all).
 ### Solution
 Once again, this task can easily be solved using `PDL`.
 We create a vector holding the minima of each row and a vector holding the maxima of each column.
