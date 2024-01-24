@@ -27,7 +27,7 @@ Output: "perl","raku"
 There are two particularities one must be aware of:
 
   *  the `split` function may produce empty fields
-  *  the separator might be a regex meta character
+  *  the separator might contain regex meta characters
 
 The former will be addressed by the usage of `grep` to filter out empty fields and the latter by using `quotemeta` on the separator.
 ```
