@@ -101,9 +101,12 @@ Using `PDL` again for its easy matrix handling.
 However, `PDL`'s sort implementation is not stable, thus we have to take masures to keep the order of equal rows.
 Therefore we append an extra column holding the row indices.
 ```
+use PDL;
+use PDL::NiceSlice;
+
 sub weakest {
 	my $m = pdl @_;
-    $m->append(sequence(1, $m->dim(1)))->qsortveci;
+    $m->append($m((0))->ndcoords)->qsortveci;
 }
 ```
 See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-253/jo-37/perl/ch-2.pl).
