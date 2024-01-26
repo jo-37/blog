@@ -33,7 +33,7 @@ The former will be addressed by the usage of `grep` to filter out empty fields a
 ```
 sub split_strings {
     my $sep = shift;
-	grep length, map +(split /\Q$sep/), @_;
+    grep length, map +(split /\Q$sep/), @_;
 }
 ```
 See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-253/jo-37/perl/ch-1.pl).
@@ -105,7 +105,7 @@ use PDL;
 use PDL::NiceSlice;
 
 sub weakest {
-	my $m = pdl @_;
+    my $m = pdl @_;
     $m->append($m((0))->ndcoords)->qsortveci;
 }
 ```
