@@ -74,33 +74,43 @@ Input: $s = "Uiua"
 Output: "Auiu"
 ```
 ---
+### Preliminary Considerations
+The task lists 'a','e', 'i', 'o' and 'u' as vowels, which means we deal with Latin characters only.
+However, there are some modifiers that may be applied to (some of) these characters: diaeresis, acute, grave, tilde, ring...
+To spice the task up, we'll consider modified vowels, too.
 ### Solution
 As an exercise I'm going to use aliasing instead of indexing for this task.
 
 Steps to solve the task:
 
- 1. Split the string into an array `@arr` of single characters.
- 2. Create an array `@vow` whose elements are aliases to the vowels in `@a`.
- 3. Create another array `@up` whose elements are aliases to the uppercase vowels in `@a`.
- 4. Assign the vowels in reverse order and in lowercase to the elements of `@vow`.
+ 1. Split the string into an array `@arr` of graphemes made of the canonical decomposition of each character.
+ 2. Create an array `@vow` whose elements are aliases to the vowel graphemes in `@a`.
+ 3. Create another array `@up` whose elements are aliases to the uppercase vowel graphemes in `@a`.
+ 4. Assign the vowel graphemes in reverse order and in lowercase to the elements of `@vow`.
  5. Transform the elements of `@up` to uppercase.
- 6. Join the elements of `@arr` to a string.
+ 6. Join the elements of `@arr` to a string in canonical composition form.
 
 Since Perl v5.22 aliases may easily be created using the `feature 'refaliasing'`.
 Special attention needs to be paid when assigning new values to aliases in an array.
 An assignment to the whole array would cut off the alias relations.
 Thus we need to assign values to the individual array elements.
 This can be achieved by assigning a list to an array slice consisting of all array elements.
+
+Here is the core of the implementation:
 ```
+use Unicode::Normalize;
+use experimental 'refaliasing';
+
 sub reverse_vowels {
-    my @arr = split //, shift;
+    my @arr = NFD(shift) =~ /\X/g;
     \(my @vow) = map /[aeiou]/i ? \$_ : (), @arr;
     \(my @up) = map /\p{Lu}/ ? \$_ : (), @vow;
 
     @vow[0 .. $#vow] = map lc, reverse @vow;
     @up[0 .. $#up] = map uc, @up;
 
-    join '', @arr;
+    NFC(join '', @arr);
 }
+
 ```
 See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-253/jo-37/perl/ch-2.pl).
