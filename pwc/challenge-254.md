@@ -76,7 +76,7 @@ Output: "Auiu"
 ---
 ### Preliminary Considerations
 The task lists 'a','e', 'i', 'o' and 'u' as vowels, which means we deal with Latin characters only.
-However, there are some modifiers that may be applied to (some of) these characters: diaeresis, acute, grave, tilde, ring...
+However, there are some modifiers that may be applied to (some of) these characters: diaeresis, acute, grave, circumflex, tilde, ring...
 To spice the task up, we'll consider modified vowels, too.
 ### Solution
 As an exercise I'm going to use aliasing instead of indexing for this task.
