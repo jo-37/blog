@@ -96,7 +96,7 @@ An assignment to the whole array would cut off the alias relations.
 Thus we need to assign values to the individual array elements.
 This can be achieved by assigning a list to an array slice consisting of all array elements.
 
-Here is the core of the implementation:
+Here is the implementation:
 ```
 use Unicode::Normalize;
 use experimental 'refaliasing';
