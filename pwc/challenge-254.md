@@ -113,4 +113,4 @@ sub reverse_vowels {
 }
 
 ```
-See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-253/jo-37/perl/ch-2.pl).
+See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-254/jo-37/perl/ch-2.pl).
