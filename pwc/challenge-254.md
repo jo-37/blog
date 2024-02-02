@@ -38,7 +38,7 @@ Though zero is a cube, is not a power of three.
 ### Solution
 We divide the given number by three as long as it is evenly dividable by 3 and not less than three.
 For powers of three and only for powers of three, this procedure will stop at one.
-```
+```perl
 sub is_pow_3 ($n) {
 	$n /= 3 while $n > 2 && !($n % 3);
     $n == 1; 
@@ -97,7 +97,7 @@ Thus we need to assign values to the individual array elements.
 This can be achieved by assigning a list to an array slice consisting of all array elements.
 
 Here is the implementation:
-```
+```perl
 use Unicode::Normalize;
 use experimental 'refaliasing';
 
