@@ -40,7 +40,7 @@ We divide the given number by three as long as it is evenly dividable by 3 and n
 For powers of three and only for powers of three, this procedure will stop at one.
 ```perl
 sub is_pow_3 ($n) {
-	$n /= 3 while $n > 2 && !($n % 3);
+    $n /= 3 while $n > 2 && !($n % 3);
     $n == 1; 
 }
 ```
