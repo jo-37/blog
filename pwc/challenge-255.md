@@ -34,7 +34,7 @@ We may relax the preconditions in this task and solve something more general:
 Find the characters in string `$t` that are not contained in string `$s` respecting their multiplicity.
 
 Therefore we count up for every character in `$t` and count down for every character in `$s`.
-Characters with a positive final count (in the multiplicity of their count) represent the solution of the generalize task.
+Characters with a positive final count (in the multiplicity of their count) represent the solution of the generalized task.
 
 We may utilize a property of the `x` operator: it produces an empty list if the right operand is negative.
 However, we need to suppress a warning in this case.
@@ -80,7 +80,7 @@ The other word "Perl" occurs 2 times.
 ### Solution
 This task may be generalized by allowing a list of banned words.
 
-We count the individual word, remove the banned words and pick the word having a maximum count from the remainder.
+We count the individual words in the given paragraph, remove the banned words and pick the word having a maximum count from the remainder.
 
 The solution:
 ```perl
