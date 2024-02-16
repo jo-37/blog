@@ -2,7 +2,7 @@
 layout: default
 title: Challenge 256
 ---
-# Frequent Oddities
+# Zippairs
 
 ## Task 1: Maximum Pairs
 **Submitted by: Mohammad Sajid Anwar**
