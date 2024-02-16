@@ -71,7 +71,7 @@ Output: "a1b2c3de"
 ---
 ### Solution
 As long as there are remaining characters in either string, we "shift" the first from both and append it to the result.
-```
+```perl
 use experimental 'signatures';
 
 sub merge_strings ($s, $t) {
