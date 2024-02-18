@@ -32,8 +32,8 @@ Output: 2
 ---
 ### Solution
 
-As word must not be paired with itself, we need to eliminate all palindromes from the list.
-Then utilizing the `delete` operation on hash elements: it returns the value for an existing key and `undef` otherwise.
+As a word must not be paired with itself, we need to eliminate all palindromes from the list.
+Then taking a slice with the reversed words as subscripts from a hash containing the words as keys.
 As both members of a pair do exist in the hash, we need to half the number to get the count of pairs.
 
 ```perl
@@ -41,7 +41,7 @@ sub maximum_pairs {
     (\my %words)->@{@_} = map scalar reverse, @_;
 
     delete @words{grep $_ eq $words{$_}, keys %words};
-    (grep defined, delete @words{values %words}) / 2;
+    (grep defined, @words{values %words}) / 2;
 }
 ```
 See the [full solution](https://github.com/manwar/perlweeklychallenge-club/blob/master/challenge-256/jo-37/perl/ch-1.pl).
