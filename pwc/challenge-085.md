@@ -1,13 +1,13 @@
 ---
 layout: redirect
 title: Challenge 085
-permalink: /blog/pwc/challenge-085.html
 redirect-to: /the-bears-den/2020/11/08/ch-085.html
 ---
 # Interwoven numbers
 
 ## The task
 
+permalink: /blog/pwc/challenge-085.html
 
 You are given an array of real numbers greater than zero.
 
