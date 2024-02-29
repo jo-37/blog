@@ -1,6 +1,7 @@
 ---
-layout: default
+layout: redirect
 title: Challenge 085
+redirect-to: https://github.sommrey.de/the-bears-den/2020/11/08/ch-085
 ---
 # Interwoven numbers
 
