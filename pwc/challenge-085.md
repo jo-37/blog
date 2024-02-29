@@ -1,7 +1,7 @@
 ---
 layout: redirect
 title: Challenge 085
-permalink: /blog/pwc/challenge-085
+permalink: /blog/pwc/challenge-085.html
 redirect-to: /the-bears-den/2020/11/08/ch-085.html
 ---
 # Interwoven numbers
